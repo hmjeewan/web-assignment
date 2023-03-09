@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        form {
+            max-width: 600px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        span {
+            display: block;
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>My photography portfolio!</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <form id="contact-form" method="post" action="">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <span id="name-error"></span>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span id="email-error"></span>
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <span id="message-error"></span>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+        <footer>
+            <p>Created by Jeewan Nandasena</p>
+            <p>Check out my <a href="https://example.com">website</a></p>
+        </footer>
+    <script>
+        const form = document.getElementById("contact-form");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const messageInput = document.getElementById("message");
+
+        form.addEventListener("submit", function (event) {
+            let valid = true;
+
+            // Validate name field
+            if (nameInput.value.trim() === "") {
+                valid = false;
+                document.getElementById("name-error").textContent = "Name is required";
+            } else {
+                document.getElementById("name-error").textContent = "";
+            }
+
+            // Validate email field
+            if (emailInput.value.trim() === "") {
+                valid = false;
+                document.getElementById("email-error").textContent = "Email is required";
+            } else if (!isValidEmail(emailInput.value)) {
+                valid = false;
+                document.getElementById("email-error").textContent = "Invalid email";
+            } else {
+                document.getElementById("email-error").textContent = "";
+            }
+
+            // Validate message field
+            if (messageInput.value.trim() === "") {
+                valid = false;
+                document.getElementById("message-error").textContent = "Message is required";
+            } else {
+                document.getElementById("message-error").textContent = "";
+            }
+
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+
+        function isValidEmail(email) {
+            // Regex pattern to match email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>

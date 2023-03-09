@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 30%;
+            margin: 20px 0;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 18px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My photography portfolio!</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h2>Portfolio</h2>
+    <div class="container">
+		<div class="card">
+			<img src="images/image1.png" alt="Image 1">
+			<h2>G-lone Bunglow</h2>
+			<p>G-lone Bunglow situated in Monaragala District.</p>
+		</div>
+		<div class="card">
+			<img src="images/image2.png" alt="Image 2">
+			<h2>Butterfly</h2>
+			<p>Butterfly in my garden.</p>
+		</div>
+		<div class="card">
+			<img src="images/image3.png" alt="Image 3">
+			<h2>Mushrooms</h2>
+			<p>Mushrooms in my garden.</p>
+		</div>
+        <div class="card">
+            <img src="images/image4.png" alt="Image 4">
+            <h2>Insect on flower</h2>
+            <p>This is captured by me on early morning.</p>
+        </div>
+        <div class="card">
+            <img src="images/image5.png" alt="Image 5">
+            <h2>Samadhi Buddha Statue</h2>
+            <p>Samadhi Buddha Statue was loacted in Polonnaruwa District.</p>
+        </div>
+        <div class="card">
+            <img src="images/image6.png" alt="Image 6">
+            <h2>Raj Sabha Mandapam</h2>
+            <p>The king was used to rule the kingdom</p>
+        </div>
+    </div>
+    <footer>
+        <p>Created by Jeewan Nandasena</p>
+        <p>Check out my <a href="https://example.com">website</a></p>
+    </footer>
+</body>
+</html>
